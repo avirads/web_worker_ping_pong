@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Worker Demo</title>
+</head>
+<body>
+    <script>
+        const worker = new Worker("web_worker.js")
+        worker.postMessage('ping')
+
+        worker.onmessage = (message)=>{
+            console.log(`got ${message.data} from web worker into html`)
+        }
+    </script>
+</body>
+</html>
